@@ -4,11 +4,14 @@ def add(x, y):
 def subtract(x, y):
     return x - y
 
-def multiplication(x, y):
+def multiply(x, y):
     return x * y
 
-def division(x, y):
-    return x / y
+def divide(x, y):
+    try:
+        return x / y
+    except ZeroDivisionError:
+        return "Divide by 0 not permitted"
 
 x = int(input("Enter first number: "))
 operation = input("Select operation (+,-,*,/): ")
@@ -27,4 +30,5 @@ elif operation == "/":
     print(x, "/", y, "=", division(x, y))
 
 else:
+
     print("Invalid input - Please restart")
